@@ -1,0 +1,238 @@
+html,body,#app
+  height: 100%
+  min-height: 100vh
+  width: 100%
+  margin: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  background-color: #3D3D3D
+.top
+  h1
+    color: #eee
+    font-size: 50px
+    letter-spacing: 5px
+    font-family: 微軟正黑體
+  h3
+    color: #222
+    font-size: 20px
+    font-family: 微軟正黑體
+    margin-top: -40px
+    font-weight: 500
+    letter-spacing: 8px
+    
+.down
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: row
+  
+.cardArea,.inputArea
+  margin: 30px
+  margin-top: 0
+.inputArea
+  font-size: 20px
+  line-height: 40px
+  font-family: 'Noto Serif TC', serif
+  label
+    color: white
+    margin-right: 10px
+    letter-spacing: 3px
+  input
+    width: 200px
+    font-size: 18px
+    color: #bababa
+    padding-left: 10px
+    border: none
+    border-bottom: solid 1px #2D918C
+    background-color: transparent
+    outline: none
+    font-family: 'Noto Serif TC', serif
+  .step
+    color: #ccc
+    font-family: 微軟正黑體
+    font-weight: 800
+    font-size: 24px
+  .fas
+    color: #2D918C
+    font-size: 26px
+    padding-right: 15px
+    margin-bottom: 30px
+  button
+    margin-left: 30px
+    border: none
+    background-color: transparent
+    border: solid 1px #2D918C
+    color: #2D918C
+    outline: none
+    font-size: 18px
+    padding: 10px 15px
+    cursor: pointer
+    transition: 0.5s
+    font-family: 'Noto Serif TC', serif
+    &:hover
+      border: #2D918C
+      background-color: #2D918C
+      color: #222
+  .inputPageOne
+    .btnToSecond
+      color: #e5bd59
+      border-color: #e5bd59
+      &:hover
+        border: #e5bd59
+        background-color: #e5bd59
+        color: #222
+  .inputPageTwo
+    display: none
+    margin-right: 70px
+    margin-top: 30px
+    input
+      border: none
+      width: 50px
+      height: 30px
+    button
+      vertical-align: top
+      margin-left: 0px
+      margin-bottom: 10px
+      height: 45px
+    .btn_cwTeXKai
+      font-family: 'cwTeXKai', serif
+    .btn_MicrosoftJhengHei
+      font-family: Microsoft JhengHei, sans-serif
+    .btn_NotoSansTC
+      font-family: Noto Sans TC, sans-serif
+    .btn_cwTeXYen
+      font-family: cwTeXYen, sans-serif
+    .btn_NotoSerifTC
+      font-family: 'Noto Serif TC', serif
+    .btn_cwTeXFangSong
+      font-family: cwTeXFangSong, serif
+    .btn_cwTeXMing
+      font-family: cwTeXMing, serif
+    .btnToDone
+      margin-top: 30px
+      margin-left: 150px
+      border: none
+      background-color: transparent
+      border: solid 1px #e5bd59
+      color: #e5bd59
+      font-size: 18px
+      padding: 10px 15px
+      &:hover
+        border: #e5bd59
+        background-color: #e5bd59
+        color: #222
+    .buttons
+      margin-bottom: 10px
+    .btnBack
+      margin-left: 0px
+      margin-top: 30px
+.cardArea
+  display: flex
+  flex-direction: column
+  align-items: center
+  
+.card
+  position: relative
+  width: 450px
+  border-radius: 10px
+  box-sizing: border-box
+  padding: 30px 30px
+  box-shadow: 5px 5px 5px rgba(black,0.4)
+  overflow: hidden
+  transition: 0.5s
+  font-family: 'Noto Serif TC', serif
+
+.companyName
+  font-size: 20px
+.companyEnglishName
+  font-size: 15px
+  line-height: 12px
+.companyAddress
+  font-size: 14px
+.companyWebsite
+  font-size: 14px
+  line-height: 12px
+.userTitle
+  padding-left: 50px
+  margin-top: 25px
+  margin-bottom: 3px
+  line-height: 10px
+.userChineseName
+  font-size: 30px
+  letter-spacing: 10px
+  margin-right: 10px
+  padding-left: 50px
+.userEnglishName
+  font-size: 25px
+.infos
+  line-height: 15px
+  margin-top: 10px
+.infoTitle,.info
+  font-size: 12px
+.infoTitle
+  margin-right: 5px
+  margin-left: 100px
+.companyLogo
+  position: absolute
+  width: 80px
+  height: 80px
+  right: 30px
+  top: 30px
+
+.backgroundImageBig
+  width: 150px
+  height: 200px
+  position: absolute
+  right: -90px
+  top: 100px
+  transform: rotate(50deg)
+.backgroundImageSmall
+  width: 200px
+  height: 200px
+  position: absolute
+  right: -190px
+  top: 120px
+  transform: rotate(50deg)
+.float
+  &:hover
+    transform: translate(0px,-10px)
+    box-shadow: 0px 15px 20px rgba(black,0.4)
+.infotext
+  text-align: center
+  font-size: 22px
+  font-family: 微軟正黑體
+  margin-top: 50px
+  margin-bottom: 50px
+  color: #dbdbdb
+.btnBackToStart
+  font-family: 'Noto Serif TC', serif
+  cursor: pointer
+  display: none
+  margin-top: 50px
+  border: none
+  background-color: transparent
+  border: solid 1px #e5bd59
+  color: #e5bd59
+  font-size: 18px
+  padding: 10px 15px
+  &:hover
+    border: #e5bd59
+    background-color: #e5bd59
+    color: #222
+  
+.cwTeXKai
+  font-family: 'cwTeXKai', serif
+.MicrosoftJhengHei
+  font-family: Microsoft JhengHei, sans-serif
+.NotoSansTC
+  font-family: Noto Sans TC, sans-serif
+.cwTeXYen
+  font-family: cwTeXYen, sans-serif
+.NotoSerifTC
+  font-family: 'Noto Serif TC', serif
+.cwTeXFangSong
+  font-family: cwTeXFangSong, serif
+.cwTeXMing
+  font-family: cwTeXMing, serif

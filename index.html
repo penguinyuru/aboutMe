@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>名片產生器－Vue練習</title>
+  
+  
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Noto+Sans+TC|Noto+Serif+TC'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/earlyaccess/cwtexyen.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/earlyaccess/cwtexkai.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/earlyaccess/notosanstc.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/earlyaccess/cwtexming.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<div id="app">
+  <div class="top">
+    <h1>名片產生器</h1>
+    <h3>Name Card Maker</h3>
+    <div class="infotext"></div>
+  </div>
+  <div class="down">
+    <div class="inputArea">
+      <div class="inputPageOne"><span class="fas fa-edit"></span><span class="step">第一步：請輸入您的資料</span><br/>
+        <label>公司中文名稱</label>
+        <input v-model="company.chineseName"/><br/>
+        <label>公司英文名稱</label>
+        <input v-model="company.englishName"/><br/>
+        <label>logo圖片位址</label>
+        <input v-model="company.logoUrl"/><br/>
+        <label>你的中文姓名</label>
+        <input v-model="user.chineseName"/><br/>
+        <label>你的英文姓名</label>
+        <input v-model="user.englishName"/><br/>
+        <label>工作職稱</label>
+        <input v-model="user.title"/><br/>
+        <label>手機號碼</label>
+        <input v-model="user.phone"/><br/>
+        <label>Line ID</label>
+        <input v-model="user.lineID"/><br/>
+        <label>公司電話</label>
+        <input v-model="company.phone"/><br/>
+        <label>分機號碼</label>
+        <input v-model="user.ext"/><br/>
+        <label>公司地址</label>
+        <input v-model="company.address"/><br/>
+        <label>公司網站</label>
+        <input v-model="company.website"/>
+        <button class="btnToSecond">下一步</button>
+      </div>
+      <div class="inputPageTwo"><span class="fas fa-edit"></span><span class="step">第二步：請挑選喜歡的字型和配色</span>
+        <div class="buttons">
+          <button class="btn_cwTeXKai">標楷體</button>
+          <button class="btn_MicrosoftJhengHei">微軟正黑體</button>
+          <button class="btn_NotoSansTC">思源黑體</button><br/>
+          <button class="btn_cwTeXYen">圓體</button>
+          <button class="btn_NotoSerifTC">思源宋體</button>
+          <button class="btn_cwTeXFangSong">仿宋體</button>
+          <button class="btn_cwTeXMing">明體</button>
+        </div>
+        <label>名片底色</label>
+        <input type="color" v-model="card.background"/><br/>
+        <label>深色字體顏色</label>
+        <input type="color" v-model="card.fontDarkColor"/><br/>
+        <label>亮色字體顏色</label>
+        <input type="color" v-model="card.fontLightColor"/><br/>
+        <label>左方圖案顏色（外）</label>
+        <input type="color" v-model="card.backgroundImageBig"/><br/>
+        <label>左方圖案顏色（內）</label>
+        <input type="color" v-model="card.backgroundImageSmall"/><br/>
+        <button class="btnBack">上一步</button>
+        <button class="btnToDone">完成！</button>
+      </div>
+    </div>
+    <div class="cardArea">
+      <div class="card" v-bind:style="{backgroundColor:card.background}">
+        <div class="frameTop" v-bind:style="{color:card.frameColor}"></div><img class="companyLogo" v-bind:src="company.logoUrl"/>
+        <div class="companyName" v-bind:style="{color:card.fontDarkColor}">{{ company.chineseName }}</div>
+        <div class="companyEnglishName" v-bind:style="{color:card.fontLightColor}">{{ company.englishName }}</div>
+        <div class="companyAddress" v-bind:style="{color:card.fontDarkColor}">{{ company.address }}</div>
+        <div class="companyWebsite" v-bind:style="{color:card.fontDarkColor}">{{ company.website }}</div>
+        <div class="userTitle" v-bind:style="{color:card.fontLightColor}">{{ user.title }}</div><span class="userChineseName" v-bind:style="{color:card.fontDarkColor}">{{ user.chineseName }}</span><span class="userEnglishName" v-bind:style="{color:card.fontDarkColor}">{{ user.englishName }}</span><br/>
+        <div class="infos"><span class="infoTitle" v-bind:style="{color:card.fontLightColor}">電話</span><span class="info" v-bind:style="{color:card.fontDarkColor}">{{ company.phone }} 轉 {{ user.ext }}</span><br/><span class="infoTitle" v-bind:style="{color:card.fontLightColor}">手機</span><span class="info" v-bind:style="{color:card.fontDarkColor}">{{ user.phone }}</span><br/><span class="infoTitle" v-bind:style="{color:card.fontLightColor}">LineID</span><span class="info" v-bind:style="{color:card.fontDarkColor}">{{ user.lineID }}</span></div>
+        <div class="backgroundImageBig" v-bind:style="{backgroundColor:card.backgroundImageBig}"></div>
+        <div class="backgroundImageSmall" v-bind:style="{backgroundColor:card.backgroundImageSmall}"></div>
+      </div>
+      <button class="btnBackToStart">再做一張</button>
+    </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
