@@ -49,14 +49,28 @@
         span.fas.fa-edit
         span.step 第二步：請挑選喜歡的字型和配色
         .buttons
-          button.btn_cwTeXKai 標楷體
-          button.btn_MicrosoftJhengHei 微軟正黑體
-          button.btn_NotoSansTC 思源黑體
-          br
-          button.btn_cwTeXYen 圓體
-          button.btn_NotoSerifTC 思源宋體
-          button.btn_cwTeXFangSong 仿宋體
-          button.btn_cwTeXMing 明體
+          .fontArea
+            input(type="radio" name="font" v-model="card.font" value="cwTeXKai" id="cwTeXKai").font
+            label.button.btn_cwTeXKai(for="cwTeXKai") 標楷體
+
+            input(type="radio" name="font" v-model="card.font" value="MicrosoftJhengHei" id="MicrosoftJhengHei").font
+            label.button.btn_MicrosoftJhengHei(for="MicrosoftJhengHei") 微軟正黑體
+
+            input(type="radio" name="font" v-model="card.font" value="NotoSansTC" id="NotoSansTC").font
+            label.button.btn_NotoSansTC(for="NotoSansTC") 思源黑體
+            br
+            input(type="radio" name="font" v-model="card.font" value="cwTeXYen" id="cwTeXYen").font
+            label.button.btn_cwTeXYen(for="cwTeXYen") 圓體
+
+            input(type="radio" name="font" v-model="card.font" value="NotoSerifTC" id="NotoSerifTC").font
+            label.button.btn_NotoSerifTC(for="NotoSerifTC") 思源宋體
+
+            input(type="radio" name="font" v-model="card.font" value="cwTeXFangSong" id="cwTeXFangSong").font
+            label.button.btn_cwTeXFangSong(for="cwTeXFangSong") 仿宋體
+
+            input(type="radio" name="font" v-model="card.font" value="cwTeXMing" id="cwTeXMing").font
+            label.button.btn_cwTeXMing(for="cwTeXMing") 明體
+
         label 名片底色
         input(type='color')(v-model= "card.background")
         br
@@ -75,7 +89,7 @@
         button.btnBack 上一步
         button.btnToDone 完成！
     .cardArea
-      .card(v-bind:style="{backgroundColor:card.background}")
+      .card(v-bind:style="{backgroundColor:card.background}" v-bind:class="[card.font]")
         .frameTop(v-bind:style="{color:card.frameColor}")
         img.companyLogo(v-bind:src="company.logoUrl")
         .companyName(v-bind:style="{color:card.fontDarkColor}") {{ company.chineseName }}
@@ -98,4 +112,3 @@
         .backgroundImageBig(v-bind:style="{backgroundColor:card.backgroundImageBig}")
         .backgroundImageSmall(v-bind:style="{backgroundColor:card.backgroundImageSmall}")
       button.btnBackToStart 再做一張
-        

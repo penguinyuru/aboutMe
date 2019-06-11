@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>名片產生器－Vue練習</title>
+  <title>名片產生器－Vue練習2</title>
   
   
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Noto+Sans+TC|Noto+Serif+TC'>
@@ -14,7 +14,7 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/earlyaccess/notosanstc.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/earlyaccess/cwtexming.css'>
 
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="./style.css">
 
   
 </head>
@@ -59,13 +59,22 @@
       </div>
       <div class="inputPageTwo"><span class="fas fa-edit"></span><span class="step">第二步：請挑選喜歡的字型和配色</span>
         <div class="buttons">
-          <button class="btn_cwTeXKai">標楷體</button>
-          <button class="btn_MicrosoftJhengHei">微軟正黑體</button>
-          <button class="btn_NotoSansTC">思源黑體</button><br/>
-          <button class="btn_cwTeXYen">圓體</button>
-          <button class="btn_NotoSerifTC">思源宋體</button>
-          <button class="btn_cwTeXFangSong">仿宋體</button>
-          <button class="btn_cwTeXMing">明體</button>
+          <div class="fontArea">
+            <input class="font" type="radio" name="font" v-model="card.font" value="cwTeXKai" id="cwTeXKai"/>
+            <label class="button btn_cwTeXKai" for="cwTeXKai">標楷體</label>
+            <input class="font" type="radio" name="font" v-model="card.font" value="MicrosoftJhengHei" id="MicrosoftJhengHei"/>
+            <label class="button btn_MicrosoftJhengHei" for="MicrosoftJhengHei">微軟正黑體</label>
+            <input class="font" type="radio" name="font" v-model="card.font" value="NotoSansTC" id="NotoSansTC"/>
+            <label class="button btn_NotoSansTC" for="NotoSansTC">思源黑體</label><br/>
+            <input class="font" type="radio" name="font" v-model="card.font" value="cwTeXYen" id="cwTeXYen"/>
+            <label class="button btn_cwTeXYen" for="cwTeXYen">圓體</label>
+            <input class="font" type="radio" name="font" v-model="card.font" value="NotoSerifTC" id="NotoSerifTC"/>
+            <label class="button btn_NotoSerifTC" for="NotoSerifTC">思源宋體</label>
+            <input class="font" type="radio" name="font" v-model="card.font" value="cwTeXFangSong" id="cwTeXFangSong"/>
+            <label class="button btn_cwTeXFangSong" for="cwTeXFangSong">仿宋體</label>
+            <input class="font" type="radio" name="font" v-model="card.font" value="cwTeXMing" id="cwTeXMing"/>
+            <label class="button btn_cwTeXMing" for="cwTeXMing">明體</label>
+          </div>
         </div>
         <label>名片底色</label>
         <input type="color" v-model="card.background"/><br/>
@@ -82,7 +91,7 @@
       </div>
     </div>
     <div class="cardArea">
-      <div class="card" v-bind:style="{backgroundColor:card.background}">
+      <div class="card" v-bind:style="{backgroundColor:card.background}" v-bind:class="[card.font]">
         <div class="frameTop" v-bind:style="{color:card.frameColor}"></div><img class="companyLogo" v-bind:src="company.logoUrl"/>
         <div class="companyName" v-bind:style="{color:card.fontDarkColor}">{{ company.chineseName }}</div>
         <div class="companyEnglishName" v-bind:style="{color:card.fontLightColor}">{{ company.englishName }}</div>
@@ -102,7 +111,7 @@
 
   
 
-    <script  src="js/index.js"></script>
+    <script  src="./script.js"></script>
 
 
 

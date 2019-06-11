@@ -108,34 +108,55 @@ html, body, #app {
   width: 50px;
   height: 30px;
 }
-.inputArea .inputPageTwo button {
-  vertical-align: top;
-  margin-left: 0px;
-  margin-bottom: 10px;
-  height: 45px;
+.inputArea .inputPageTwo .fontArea input {
+  display: none;
 }
-.inputArea .inputPageTwo .btn_cwTeXKai {
+.inputArea .inputPageTwo .fontArea br {
+  line-height: 60px;
+}
+.inputArea .inputPageTwo .fontArea .button {
+  background-color: transparent;
+  border: solid 1px #2D918C;
+  color: #2D918C;
+  outline: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.inputArea .inputPageTwo .fontArea .button:hover {
+  border: #2D918C;
+  background-color: #2D918C;
+  color: #222;
+}
+.inputArea .inputPageTwo .fontArea .btn_cwTeXKai {
   font-family: "cwTeXKai", serif;
+  font-size: 23px;
 }
-.inputArea .inputPageTwo .btn_MicrosoftJhengHei {
+.inputArea .inputPageTwo .fontArea .btn_MicrosoftJhengHei {
   font-family: Microsoft JhengHei, sans-serif;
 }
-.inputArea .inputPageTwo .btn_NotoSansTC {
+.inputArea .inputPageTwo .fontArea .btn_NotoSansTC {
   font-family: Noto Sans TC, sans-serif;
+  font-size: 16px;
 }
-.inputArea .inputPageTwo .btn_cwTeXYen {
+.inputArea .inputPageTwo .fontArea .btn_cwTeXYen {
   font-family: cwTeXYen, sans-serif;
+  font-size: 25px;
 }
-.inputArea .inputPageTwo .btn_NotoSerifTC {
+.inputArea .inputPageTwo .fontArea .btn_NotoSerifTC {
   font-family: "Noto Serif TC", serif;
+  font-size: 17px;
 }
-.inputArea .inputPageTwo .btn_cwTeXFangSong {
+.inputArea .inputPageTwo .fontArea .btn_cwTeXFangSong {
   font-family: cwTeXFangSong, serif;
+  font-size: 24px;
 }
-.inputArea .inputPageTwo .btn_cwTeXMing {
+.inputArea .inputPageTwo .fontArea .btn_cwTeXMing {
   font-family: cwTeXMing, serif;
+  font-size: 24px;
 }
-.inputArea .inputPageTwo .btnToDone {
+.inputArea .inputPageTwo .fontArea .btnToDone {
   margin-top: 30px;
   margin-left: 150px;
   border: none;
@@ -145,7 +166,7 @@ html, body, #app {
   font-size: 18px;
   padding: 10px 15px;
 }
-.inputArea .inputPageTwo .btnToDone:hover {
+.inputArea .inputPageTwo .fontArea .btnToDone:hover {
   border: #e5bd59;
   background-color: #e5bd59;
   color: #222;
